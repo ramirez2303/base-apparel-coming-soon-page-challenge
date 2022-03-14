@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  --desatured-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+}
+
+#header {
+  padding: 1.5em 2em;
+}
+
+#header img {
+  width: 7em;
+}
+
+.container-img {
+  content: url(images/hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+}
+
+.container-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3.3em;
+  height: 100%;
+}
+
+.title {
+  font-size: 3em;
+  color: var(--desatured-red);
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0 auto;
+  letter-spacing: 0.22em;
+}
+
+span {
+  display: block;
+  margin: 0 auto;
+  font-weight: 500;
+  color: var(--dark-grayish-red);
+}
+
+.title,
+span {
+  line-height: 1;
+}
+
+.txt {
+  font-size: 0.85em;
+
+  color: var(--desatured-red);
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: 0 3em;
+}
+
+.form-container {
+  margin: 1.6em 0 3em;
+}
+
+label {
+  position: relative;
+}
+
+input {
+  color: var(--desatured-red);
+  width: 17em;
+  height: 1.6em;
+  padding: 1em 2em;
+  border: 1px solid var(--desatured-red);
+  border-radius: 40px;
+}
+
+input:focus {
+  border: 1px solid var(--dark-grayish-red);
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--desatured-red);
+  opacity: 0.4;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.error {
+  display: none;
+  position: absolute;
+  right: 110px;
+  bottom: -3px;
+  z-index: 99;
+}
+
+.btn {
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 93%, 71%));
+  position: absolute;
+  right: -5px;
+  border: none;
+  padding: 1em 3em 1em 3.2em;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, hsl(0, 53%, 92%), rgb(241, 153, 153));
+  box-shadow: 0 7px 15px 3px rgba(128, 128, 128, 0.205);
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+.error-txt {
+  display: none;
+  position: absolute;
+  color: red;
+  font-size: 0.8em;
+  font-weight: 400;
+  padding: 1em 0 0 1em;
+}
+
+footer {
+  height: 100%;
+}
+
+.attribution {
+  font-size: 0.8em;
+  text-align: center;
+}
+.attribution a {
+  color: var(--soft-red);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  color: var(--dark-grayish-red);
+  transition: 0.3s ease-out;
+}
+
+@media (min-width: 600px) {
+  .txt {
+    width: 70%;
+  }
+}
+
+@media (min-width: 550px) {
+  .container-img {
+    width: 30em;
+    height: 100%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+      "header section"
+      "main   section"
+      "footer section";
+    grid-template-columns: 60% 2fr;
+    grid-template-rows: 5em 1fr 5em;
+  }
+  body > header {
+    grid-area: header;
+  }
+  body > section {
+    grid-area: section;
+  }
+  body > main {
+    grid-area: main;
+  }
+  body > footer {
+    grid-area: footer;
+  }
+  #header {
+    width: 40em;
+    margin: auto;
+    padding: 0;
+    margin-top: 3em;
+  }
+  #header img {
+    width: 10em;
+  }
+  .container-img {
+    content: url(images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+  }
+  .container-desc {
+    width: 40em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    margin: 2.5em auto 0;
+  }
+  .title,
+  span {
+    letter-spacing: 10px;
+    line-height: 1.15;
+  }
+  .title {
+    width: 8em;
+    margin: 0;
+    font-size: 3.5em;
+  }
+  span {
+    font-weight: 600;
+  }
+  .txt {
+    line-height: 1.6;
+    margin: 1em 0;
+    padding: 0;
+    font-size: 1em;
+  }
+  input {
+    width: 370px;
+  }
+  /* .error-txt {
+  } */
+  footer {
+    width: 40em;
+    margin: 0 auto;
+  }
+  .attribution {
+    text-align: left;
+  }
+}
